@@ -2,8 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect
+  Switch
 } from "react-router-dom";
 import Navbar from './Components/Navbar'
 import PageHome from "./Components/PageHome";
@@ -13,12 +12,7 @@ import './App.css'
 const App = () => {
   return (
     <>
-      <Router>
-        <Switch>
-          <Redirect from='*' to='/resume-site' />
-        </Switch>
-      </Router>
-      <Router basename='/resume-site/'>
+      <Router basename={window.location.pathname || ''}>
         <Navbar />
         <Switch>
           <Route exact path="/" component={PageHome} />
