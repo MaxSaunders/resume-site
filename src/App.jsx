@@ -1,26 +1,24 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
-  // Route,
+  Route,
   Routes,
-  // Navigate
+  Navigate
 } from "react-router-dom";
-import Header from './Components/Header'
 import Navbar from './Components/Navbar'
+import PageHome from "./Components/PageHome";
+import PageResume from './Components/PageResume';
 import './App.css'
 
-function App() {
-
+const App = () => {
   return (
     <Router>
-      <Routes>
-        {/* <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} /> */}
-      </Routes>
       <Navbar />
-      <Header />
+      <Routes>
+        <Route path="/" element={<PageHome />} />
+        <Route path="/resume" element={<PageResume />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </Router>
   )
 }
