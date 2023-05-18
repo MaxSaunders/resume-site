@@ -23,8 +23,10 @@
     padding: 1rem;
 }
 
-.nav-link:hover, a:hover {
-    color: white;
+a:hover,
+.nav-link:hover,
+.nav-item > .active {
+    color: white !important;
 }
 
 ul, a {
@@ -62,23 +64,27 @@ a::after {
     transition: transform 0.5s;
 }
 
-a:hover {
+a:hover,
+.nav-item > .active {
     color: var(--primary-purple);
 }
 
-a:hover::after {
+a:hover::after,
+.nav-item > .active::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
 .navbar-toggler-icon, .navbar-toggler {
     color: var(--primary-purple);
-    /* background-image: var(--primary-purple); */
-    /* background-color: brown; */
 }
 
 .navbar-toggler:focus {
     text-decoration: none;
     outline: 0;
     box-shadow: 0 0 0 0;
+}
+
+.link-a {
+    color: var(--primary-purple) !important;
 }
