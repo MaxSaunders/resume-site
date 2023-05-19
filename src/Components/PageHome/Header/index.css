@@ -1,13 +1,42 @@
 .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 220px;
-}
-
-.header-intro {
-    margin-block: 10rem;
 }
 
 .avatar-container {
     position: relative;
+}
+
+.header-intro-container {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* md screens and smaller */
+@media (max-width: 767px) {
+    .header-intro {
+        margin-block: 1rem;
+    }
+    
+    .header {
+        margin-bottom: 50px;
+    }
+
+    .avatar-container {
+        margin-top: .5rem;
+    }
+}
+
+/* larger than md screens */
+@media (min-width: 768px) {
+    .header-intro {
+        margin-block: 7rem;
+    }
+    
+    .header {
+        margin-bottom: 50px;
+    }
+    
+    .avatar-container {
+        margin-top: 2rem;
+    }
 }
