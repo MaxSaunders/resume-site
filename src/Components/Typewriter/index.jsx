@@ -10,7 +10,7 @@ const TypeWriter = ({
     const textArr = useMemo(() => textArray, [textArray])
 
     const sPerChar = .25
-    const sBetweenWords = 4.5
+    const sBetweenWords = 3.5
 
     const [printedText, setPrintedText] = useState('')
     const [wordIndex, setWordIndex] = useState(0)
@@ -75,7 +75,9 @@ const TypeWriter = ({
         <div className="typewriter">
             {`${staticWord} `}
             <div>
-                {printedText}
+                <span className='primary-purple'>
+                    {printedText}
+                </span>
                 <span className='cursor-blink'>
                     {cursor}
                 </span>

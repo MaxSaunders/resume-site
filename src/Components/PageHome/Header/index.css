@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 220px;
+}
+
+.header-intro {
+    margin-block: 10rem;
+}
+
+.avatar-container {
+    position: relative;
+}

@@ -2,6 +2,7 @@ import { Nav, Navbar } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import { AiOutlineHome, AiFillGithub, AiOutlineMenuFold, AiOutlineMail } from 'react-icons/ai'
 import { CgFileDocument } from 'react-icons/cg'
+import { FaCode } from 'react-icons/fa'
 import './index.css'
 
 const Routes = () => {
@@ -39,16 +40,16 @@ const Routes = () => {
 
 const NavBar = () =>
     <Navbar expand="md" className="navbar">
-        <Navbar.Brand>
+        <Navbar.Brand href='/'>
             <div className='navbar-logo'>
                 <div className='logo-wrapper'>
                     <div className='fw-bold'>
                         <span className='logo'>
-                            {`</>`}
+                            <FaCode />
                         </span>
                         <span className='logo-name'>
-                            {/* {`M. S.`} */}
-                            {`Max Saunders`}
+                            {`M. S.`}
+                            {/* {`Max Saunders`} */}
                         </span>
                     </div>
                 </div>

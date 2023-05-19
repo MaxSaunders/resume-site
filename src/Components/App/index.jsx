@@ -4,15 +4,17 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import Navbar from './Components/Navbar'
-import PageHome from "./Components/PageHome";
-import PageResume from './Components/PageResume';
-import './App.css'
+import Navbar from '../Navbar'
+import PageHome from "../PageHome";
+import PageResume from '../PageResume';
+import Particle from './Particle';
+import './index.css'
 
 const App = () => {
   return (
     <>
       <Router basename={window.location.pathname || ''}>
+        <Particle />
         <Navbar />
         <Switch>
           <Route exact path="/" component={PageHome} />
