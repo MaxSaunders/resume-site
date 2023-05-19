@@ -23,6 +23,10 @@ html {
 }
 
 :root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -36,6 +40,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   --primary-purple: #ce5ef8;
+  --dark-purple: #1e1240;
+}
+
+.section {
+  padding-inline: 2rem;
 }
 
 .primary-purple {
@@ -59,7 +68,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to left, rgb(27 20 41), rgb(30, 18, 65));
-  /* background-image: linear-gradient(to left, rgb(27 20 41), rgb(40, 30, 69)); */
   color: white;
 }
 

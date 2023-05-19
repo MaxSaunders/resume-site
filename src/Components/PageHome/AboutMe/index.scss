@@ -1,0 +1,25 @@
+.about-me-container {
+    padding-block: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.read-more-button {
+    cursor: pointer;
+    font-weight: 700;
+
+    &:hover {
+        color: cadetblue;
+    }
+}
+
+.read-more {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.read-more-hidden {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    height: 0;
+}

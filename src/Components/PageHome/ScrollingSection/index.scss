@@ -20,6 +20,28 @@ header {
   }
 }
 
+// .scrolling-app {
+//   // margin-top: auto;
+// }
+
+// @media (max-width: 767px) {
+//   .scrolling-app {
+//     // margin-top: 0px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .scrolling-app {
+//     // margin-top: 90px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .scrolling-app {
+//     // margin-top: 10px;
+//   }
+// }
+
 .tag-list {
   display: flex;
   flex-shrink: 0;
@@ -63,9 +85,9 @@ header {
   }
 }
 
-.fade {
+.fade-in-section {
   pointer-events: none;
-  background: linear-gradient(90deg, #281e44, transparent 30%, transparent 70%, #281e44);
+  background: linear-gradient(90deg, var(--dark-purple), transparent 30%, transparent 70%, #1b142a);
   position: absolute;
   inset: 0;
 }
