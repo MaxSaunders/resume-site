@@ -38,6 +38,10 @@ html {
   --primary-purple: #ce5ef8;
 }
 
+.primary-purple {
+  color: var(--primary-purple);
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -54,7 +58,8 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(40, 30, 69));
+  background-image: linear-gradient(to left, rgb(27 20 41), rgb(30, 18, 65));
+  /* background-image: linear-gradient(to left, rgb(27 20 41), rgb(40, 30, 69)); */
   color: white;
 }
 
