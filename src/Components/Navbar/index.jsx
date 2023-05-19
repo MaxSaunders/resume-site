@@ -1,9 +1,11 @@
-import { Nav, Navbar } from 'react-bootstrap'
+import { Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
-import { AiOutlineHome, AiFillGithub, AiOutlineMenuFold, AiOutlineMail } from 'react-icons/ai'
+import { AiOutlineProject, AiOutlineHome, AiFillGithub, AiOutlineMenuFold, AiOutlineMail } from 'react-icons/ai'
 import { CgFileDocument } from 'react-icons/cg'
-import { FaCode } from 'react-icons/fa'
-import './index.css'
+import { SiPolymerproject } from 'react-icons/si'
+
+// import logo from '../../assets/logo-1-sm.png'
+import './index.scss'
 
 const Routes = () => {
     const { pathname } = useLocation()
@@ -22,6 +24,25 @@ const Routes = () => {
                     Resume
                 </Nav.Link>
             </Nav.Item>
+
+            <Nav.Item className='d-flex align-items-center'>
+                <AiOutlineProject size='23' className='me-2' />
+                <NavDropdown title="OTHER" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">
+                        Action
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                        Another action
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">
+                        Something
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.4">
+                        Separated link
+                    </NavDropdown.Item>
+                </NavDropdown>
+            </Nav.Item>
+
             <Nav.Item>
                 <a className='link-a nav-link justify-space-between' target='_blank' href='https://github.com/MaxSaunders' rel="noreferrer">
                     <AiFillGithub size='23' className='me-2' />
@@ -43,13 +64,14 @@ const NavBar = () =>
         <Navbar.Brand href='/'>
             <div className='navbar-logo'>
                 <div className='logo-wrapper'>
+                    {/* <img src={logo} width='50px' height='50px' alt="logo" /> */}
                     <div className='fw-bold'>
                         <span className='logo'>
-                            <FaCode />
+                            {/* <FaCode /> */}
+                            <SiPolymerproject />
                         </span>
                         <span className='logo-name'>
-                            {`M. S.`}
-                            {/* {`Max Saunders`} */}
+                            {`MS.`}
                         </span>
                     </div>
                 </div>
@@ -58,9 +80,23 @@ const NavBar = () =>
         <Navbar.Toggle aria-controls="navbarCollapse" >
             <AiOutlineMenuFold size={40} />
         </Navbar.Toggle>
-        <Navbar.Collapse id="navbarCollapse">
+        <Navbar.Offcanvas
+            // id="navbarCollapse"
+            id={`offcanvasNavbar-expand-md`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+            placement="end">
+            <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
+                    Menu
+                </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+                <Routes />
+            </Offcanvas.Body>
+        </Navbar.Offcanvas>
+        {/* <Navbar.Collapse id="navbarCollapse">
             <Routes />
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
     </Navbar >
 
 export default NavBar

@@ -1,17 +1,14 @@
-import Particle from '../App/Particle'
+import ScrollingSection from './ScrollingSection'
 import AboutMe from './AboutMe'
 import Header from './Header'
-import ScrollingSection from './ScrollingSection'
 
-const PageHome = () => {
-    return (
-        <>
-            <Particle />
-            <Header />
-            <AboutMe />
+const PageHome = () =>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '94vh' }}>
+        <Header />
+        <AboutMe />
+        <div style={{ marginTop: 'auto' }}>
             <ScrollingSection />
-        </>
-    )
-}
+        </div>
+    </div>
 
 export default PageHome
