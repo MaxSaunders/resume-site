@@ -13,13 +13,14 @@
 }
 
 .read-more {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    min-height: 0;
+    max-height: 0;
     overflow: hidden;
+    transition:
+        min-height 0.3s ease,
+        max-height 0.3s ease;
 }
 
-.read-more-hidden {
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    height: 0;
+.show-true {
+    max-height: 1000px;
 }

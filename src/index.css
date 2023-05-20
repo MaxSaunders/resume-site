@@ -23,7 +23,6 @@ html {
 }
 
 :root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
   
@@ -45,7 +44,28 @@ html {
 
 .section {
   padding-inline: 2rem;
+  justify-content: center;
+  display: flex;
 }
+
+@media (max-width: 767px) {
+  .section > div {
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 1399px) {
+  .section > div {
+    max-width: 80vw;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section > div {
+    max-width: 50vw;
+  }
+}
+
 
 .primary-purple {
   color: var(--primary-purple);

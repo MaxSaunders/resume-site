@@ -20,27 +20,9 @@ header {
   }
 }
 
-// .scrolling-app {
-//   // margin-top: auto;
-// }
-
-// @media (max-width: 767px) {
-//   .scrolling-app {
-//     // margin-top: 0px;
-//   }
-// }
-
-// @media (min-width: 768px) {
-//   .scrolling-app {
-//     // margin-top: 90px;
-//   }
-// }
-
-// @media (min-width: 992px) {
-//   .scrolling-app {
-//     // margin-top: 10px;
-//   }
-// }
+.scrolling-app {
+  max-width: 1500px;
+}
 
 .tag-list {
   display: flex;

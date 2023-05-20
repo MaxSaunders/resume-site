@@ -6,9 +6,7 @@ const PageHome = () =>
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '94vh' }}>
         <Header />
         <AboutMe />
-        <div style={{ marginTop: 'auto' }}>
-            <ScrollingSection />
-        </div>
+        <ScrollingSection />
     </div>
 
 export default PageHome
