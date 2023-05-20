@@ -14,7 +14,7 @@ import './index.css'
 
 const App = () =>
   <>
-    <Router basename={'/resume-site' || ''}>
+    <Router>
       {/* TODO: add transitions for page changes */}
       <Particle />
       <Navbar />
