@@ -38,7 +38,7 @@ const Tag = ({ text }) =>
     <div className='tag'><span>#</span> {text}</div>
 
 const ScrollingSection = () =>
-    <div className='section' style={{ marginTop: 'auto' }}>
+    <div className='section scrolling-section'>
         <div className='align-self-center scrolling-app'>
             <div className='tag-list mx-0'>
                 {[...new Array(ROWS)].map((_, i) => (
