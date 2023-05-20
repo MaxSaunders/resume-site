@@ -19,7 +19,7 @@ const App = () => {
   )
   return (
     <>
-      <Router basename={window.location.pathname || '/resume-site'}>
+      <Router basename={window.location.pathname || ''}>
         {/* TODO: add transitions for page changes */}
         <Particle />
         <Navbar />
@@ -27,7 +27,7 @@ const App = () => {
           <Route exact path="/" component={PageHome} />
           <Route exact path="/resume" component={PageResume} />
           <Route exact path="/projects" component={PageProjects} />
-          <Route exact path="/*" component={Page401} />
+          {/* <Route exact path="/*" component={Page401} /> */}
         </Switch>
       </Router>
     </>
