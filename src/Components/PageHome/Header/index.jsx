@@ -15,11 +15,11 @@ const Header = () =>
                 </h1>
             </div>
         </div>
-        <div className='header w-100 section'>
-            <Container className='mx-0 w-100' style={{ maxWidth: 'none' }}>
+        <div className='header section'>
+            <Container className='typer-container'>
                 <Row className='justify-content-between d-flex'>
                     <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 8 }} className='px-0 mt-5 mt-md-0 align-self-center'>
-                        <h1 className='fw-bold'>
+                        <h1 className='mb-0 fw-bold'>
                             <TypeWriter
                                 staticWord='I am a'
                                 textArray={[
