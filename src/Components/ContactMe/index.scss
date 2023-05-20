@@ -1,19 +1,10 @@
-.logo-container {
-    position: relative;
-    flex: 1;
-}
-
-.back-circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .logo-icon {
-    z-index: 1;
+    cursor: pointer;
+    border-radius: 10px;
+    
+    border: 5px solid rgb(250, 250, 250);
+    background-color: rgb(250, 250, 250);
+    color: var(--dark-purple);
 
-    position: absolute;
-    top: 7px;
-    left: 11px;
-    color: var(--primary-purple);
+    margin-block: 1rem;
 }
