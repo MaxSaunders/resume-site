@@ -50,24 +50,7 @@ const Routes = ({ close }) => {
                     Email
                 </a>
             </Nav.Item>
-            {/* 
-            <Nav.Item className='d-flex align-items-center'>
-                <span className='d-flex align-items-center'>
-                    <NavDropdown title={<DropdownTitle />} id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">
-                            <Nav.Link onClick={close} as={Link} to='/'>
-                                HOME
-                            </Nav.Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.1">
-                            <Nav.Link onClick={close} as={Link} to='/'>
-                                HOME
-                            </Nav.Link>
-                        </NavDropdown.Item>
-                    </NavDropdown>
-                </span>
-            </Nav.Item> 
-            */}
+            {/* TODO: consider changing the contact part of this to the contact me section, might look better */}
         </Nav>
     )
 }

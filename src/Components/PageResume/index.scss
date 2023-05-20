@@ -1,0 +1,29 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    background-color: rgba(#000000, .4);
+}
+
+.download-button {
+    background-color: var(--primary-purple);
+    border: 1px solid var(--dark-purple);
+    
+    &:hover {
+        color: var(--primary-purple);
+        background-color: white;
+    }
+}
+
+.react-pdf__Page__canvas {
+    width: auto !important;
+    height: auto !important;
+    max-width: 80vw;
+}
+
+@media (max-width: 767px) {
+    .disclaimer-text {
+        white-space: pre-line;
+    }
+}
