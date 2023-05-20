@@ -38,16 +38,18 @@ const Tag = ({ text }) =>
     <div className='tag'><span>#</span> {text}</div>
 
 const ScrollingSection = () =>
-    <div className='scrolling-app'>
-        <div className='tag-list mx-0'>
-            {[...new Array(ROWS)].map((_, i) => (
-                <InfiniteLoopSlider key={i} duration={random(DURATION, DURATION + 10000)} reverse={i % 2}>
-                    {shuffle(TAGS).slice(0, TAGS_PER_ROW).map(tag => (
-                        <Tag text={tag} key={tag} />
-                    ))}
-                </InfiniteLoopSlider>
-            ))}
-            <div className='fade-in-section' />
+    <div className='section' style={{ marginTop: 'auto' }}>
+        <div className='align-self-center scrolling-app'>
+            <div className='tag-list mx-0'>
+                {[...new Array(ROWS)].map((_, i) => (
+                    <InfiniteLoopSlider key={i} duration={random(DURATION, DURATION + 10000)} reverse={i % 2}>
+                        {shuffle(TAGS).slice(0, TAGS_PER_ROW).map(tag => (
+                            <Tag text={tag} key={tag} />
+                        ))}
+                    </InfiniteLoopSlider>
+                ))}
+                <div className='fade-in-section' />
+            </div>
         </div>
     </div>
 
