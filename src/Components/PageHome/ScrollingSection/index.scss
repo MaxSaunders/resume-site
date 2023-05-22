@@ -85,7 +85,14 @@ header {
 
 .fade-in-section {
   pointer-events: none;
-  background: linear-gradient(90deg, var(--dark-purple), transparent 30%, transparent 70%, #1b142a);
+  background:
+  linear-gradient(
+    90deg,
+    #c1cabe,
+    transparent 30%,
+    transparent 70%,
+    #c1cabe
+    );
   position: absolute;
   inset: 0;
 }

@@ -9,7 +9,6 @@ import {
 import Navbar from '../Navbar'
 import Footer from '../Footer';
 import Page404 from '../Page404';
-import Particle from './Particle';
 import PageHome from "../PageHome";
 import PageResume from '../PageResume';
 import PageProjects from '../PageProjects';
@@ -20,7 +19,6 @@ const AnimatedWrapper = () => {
 
   return (
     <>
-      <Particle />
       <Navbar />
       <TransitionGroup component={null}>
         <CSSTransition key={location.pathname} classNames="fade" timeout={300}>

@@ -38,13 +38,18 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  --primary-purple: #ce5ef8;
-  --dark-purple: #1e1240;
+  --primary-purple: #3b525f;
+  --dark-purple: #c1cabe;
+  --dark-cyan: #3c505e;
   
   --color-bg: #263238;
   --color-text: #eeffff;
   --color-numbers: #50646D;
   --color-outline: #50646D;
+}
+
+.dark-cyan-text {
+  color: var(--dark-cyan);
 }
 
 .section {
@@ -71,7 +76,6 @@ html {
   }
 }
 
-
 .primary-purple {
   color: var(--primary-purple);
 }
@@ -92,7 +96,7 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(30, 18, 65));
+  background-image: linear-gradient(to left, #c1cabe, #c1cabe);
   color: white;
 }
 
