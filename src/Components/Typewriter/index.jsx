@@ -5,13 +5,12 @@ import './index.css'
 const TypeWriter = ({
     staticWord = '',
     textArray = [],
-    cursor = '|'
+    cursor = '|',
+    loop = false,
+    secondsPerChar = .25,
+    secondsBetweenWords = 3.5
 }) => {
     const textArr = useMemo(() => textArray, [textArray])
-
-    const sPerChar = .25
-    const sBetweenWords = 3.5
-
     const [printedText, setPrintedText] = useState('')
     const [wordIndex, setWordIndex] = useState(0)
     const [charIndex, setCharIndex] = useState(0)
@@ -50,26 +49,35 @@ const TypeWriter = ({
                     setIsClear(true)
                     clearInterval(_deleteAll)
                 }
-            }, (sPerChar * .3) * 1000)
-        }, sBetweenWords * 1000)
+            }, (secondsPerChar * .3) * 1000)
+        }, secondsBetweenWords * 1000)
         // Set delay between words before deleting
-    }, [textArr, wordIndex, sBetweenWords, deleting, setIsClear, setCharIndex])
+    }, [textArr, wordIndex, secondsPerChar, secondsBetweenWords, deleting, setIsClear, setCharIndex])
 
     useEffect(() => {
         const _type = setInterval(() => {
-            if (isClear) {
-                if (printedText?.length >= textArr[wordIndex]?.length) {
-                    setIsClear(false)
-                    deleteAll()
-                } else {
-                    typing(textArr?.[wordIndex]?.[charIndex])
-                    setCharIndex(i => i + 1)
+            if (textArr?.length) {
+                if (isClear) {
+                    if (printedText?.length >= textArr[wordIndex]?.length) {
+                        if (!loop && wordIndex >= textArr?.length - 1) {
+                            clearInterval(_type)
+                        } else {
+                            setIsClear(false)
+                            deleteAll()
+                        }
+                    } else {
+                        typing(textArr?.[wordIndex]?.[charIndex])
+                        setCharIndex(i => i + 1)
+                    }
                 }
+            } else {
+                console.log('hit this====')
+                clearInterval(_type)
             }
-        }, sPerChar * 1000)
+        }, secondsPerChar * 1000)
 
         return () => clearInterval(_type)
-    }, [textArr, wordIndex, charIndex, printedText, isClear, setIsClear, typing, deleteAll])
+    }, [textArr, wordIndex, charIndex, printedText, isClear, secondsPerChar, loop, setIsClear, typing, deleteAll])
 
     return (
         <div className="typewriter">
@@ -89,7 +97,10 @@ const TypeWriter = ({
 TypeWriter.propTypes = {
     staticWord: PropTypes.string,
     textArray: PropTypes.array,
-    cursor: PropTypes.string
+    cursor: PropTypes.string,
+    loop: PropTypes.bool,
+    secondsPerChar: PropTypes.number,
+    secondsBetweenWords: PropTypes.number,
 }
 
 export default TypeWriter
