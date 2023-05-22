@@ -21,6 +21,7 @@ const Header = () =>
                     <Col xs={{ order: 2, span: 12 }} md={{ order: 1, span: 8 }} className='px-0 mt-5 mt-md-0 align-self-center'>
                         <h1 className='mb-0 fw-bold'>
                             <TypeWriter
+                                loop
                                 staticWord='I am a'
                                 textArray={[
                                     "Web Developer.",

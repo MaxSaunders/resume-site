@@ -28,6 +28,18 @@ header {
   margin-top: auto;
 }
 
+@media (max-width: 767px) {
+  .scrolling-section {
+    margin-bottom: 160px;
+  }
+}
+
+@media (min-width: 768px) {
+  .scrolling-section {
+    margin-bottom: 80px;
+  }
+}
+
 .tag-list {
   display: flex;
   flex-shrink: 0;

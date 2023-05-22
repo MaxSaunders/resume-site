@@ -1,0 +1,19 @@
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(#000000, .4);
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: #333333;
+}
