@@ -38,7 +38,7 @@ const AnimatedWrapper = () => {
 }
 
 const App = () =>
-  <Router basename='/resume-site'>
+  <Router>
     <AnimatedWrapper />
   </Router>
 

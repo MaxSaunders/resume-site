@@ -62,7 +62,7 @@ const NavBar = () => {
 
     return (
         <Navbar expanded={isOpen} expand="md" className="navbar">
-            <Navbar.Brand href='/'>
+            <Navbar.Brand as={Link} to='/'>
                 <div className='navbar-logo'>
                     <div className='logo-wrapper'>
                         <div className='fw-bold'>
