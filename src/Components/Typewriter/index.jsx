@@ -80,17 +80,17 @@ const TypeWriter = ({
     }, [textArr, wordIndex, charIndex, printedText, isClear, secondsPerChar, loop, setIsClear, typing, deleteAll])
 
     return (
-        <div className="typewriter">
+        <span className="typewriter">
             {`${staticWord} `}
-            <div>
+            <span>
                 <span className='primary-purple'>
                     {printedText}
                 </span>
                 <span className='cursor-blink'>
                     {cursor}
                 </span>
-            </div>
-        </div>
+            </span>
+        </span>
     )
 }
 
