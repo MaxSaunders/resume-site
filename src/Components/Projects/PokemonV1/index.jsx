@@ -67,7 +67,7 @@ const Pokemon = () => {
 
     const fetchPokemonName = useCallback(() => {
         getRandomPokemon().then(res => {
-            setPokemonNameArray(i => [...i, res?.name]?.toSorted())
+            setPokemonNameArray(i => [...i, res?.name]?.sort())
         })
     }, [getRandomPokemon])
 
@@ -88,7 +88,7 @@ const Pokemon = () => {
 
         getRandomPokemon().then(res => {
             setPokemon(res)
-            setPokemonNameArray(i => [...i, res?.name]?.toSorted())
+            setPokemonNameArray(i => [...i, res?.name]?.sort())
 
             if (!res?.name) {
                 fetchPokemon()
@@ -156,8 +156,8 @@ const Pokemon = () => {
                     }
                 </Col>
 
-                <Col className='mb-5' xs={12}>
-                    <img className={`pokemon-picture hidden-${hidden}`} src={imgUrl} />
+                <Col className='mb-5' xs={12} onDragStart={e => e.preventDefault()}>
+                    <img onContextMenu={e => e.preventDefault()} onDragStart={e => e.preventDefault()} className={`pokemon-picture hidden-${hidden}`} src={imgUrl} />
                 </Col>
 
                 {correct ?
