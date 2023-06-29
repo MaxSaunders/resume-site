@@ -67,7 +67,7 @@ const Pokemon = () => {
 
     const fetchPokemonName = useCallback(() => {
         getRandomPokemon().then(res => {
-            setPokemonNameArray(i => [...i, res?.name])
+            setPokemonNameArray(i => [...i, res?.name]?.toSorted())
         })
     }, [getRandomPokemon])
 
@@ -88,7 +88,7 @@ const Pokemon = () => {
 
         getRandomPokemon().then(res => {
             setPokemon(res)
-            setPokemonNameArray(i => [...i, res?.name])
+            setPokemonNameArray(i => [...i, res?.name]?.toSorted())
 
             if (!res?.name) {
                 fetchPokemon()
