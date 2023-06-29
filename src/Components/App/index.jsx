@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   useLocation
