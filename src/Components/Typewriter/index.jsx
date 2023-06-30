@@ -71,7 +71,6 @@ const TypeWriter = ({
                     }
                 }
             } else {
-                console.log('hit this====')
                 clearInterval(_type)
             }
         }, secondsPerChar * 1000)

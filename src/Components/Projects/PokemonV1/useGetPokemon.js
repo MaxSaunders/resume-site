@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useCallback } from "react"
-import { getRandomInt } from "../../../utils/getRandom"
+import { getRandomNumbers } from "../../../utils/getRandom"
 
 const POKE_API_URL = 'https://pokeapi.co/api/v2'
 
@@ -42,14 +42,17 @@ const useGetPokemon = () => {
         })
     }, [])
 
-    const getRandomPokemon = useCallback(() => {
-        return getPokemonList().then(() => {
-            // const pokeCount = res?.count
-            // not sure what the problem is here
-            // the api returns more indicies then there are pokemon entries
+    const getRandomPokemon = useCallback((numberOfPokemon = 1) => {
+        return getPokemonList().then(async () => {
+            const arr = []
             const pokeCount = 1010
-            const pokeIndex = getRandomInt(1, pokeCount + 1)
-            return getPokemon(pokeIndex)
+            const pokeIndices = getRandomNumbers(1, pokeCount + 1, numberOfPokemon)
+
+            while ((arr?.length < numberOfPokemon)) {
+                const pokemon = await getPokemon(pokeIndices[arr?.length])
+                arr.push(pokemon)
+            }
+            return arr
         })
     }, [getPokemon, getPokemonList])
 

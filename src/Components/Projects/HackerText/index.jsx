@@ -102,7 +102,7 @@ const HackerTextDemo = () =>
         <div>
             {`$ `}
             <HackerText hoverAffect ipl={15}>
-                hover this line to trigger the affect again
+                hover this line to trigger the effect again
             </HackerText>
         </div>
     </div>
