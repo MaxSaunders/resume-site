@@ -142,7 +142,7 @@ const PokemonGame = ({ difficulty, exitGame }) => {
                 <Col className='mb-5' xs={12} onDragStart={e => e.preventDefault()}>
                     <img onContextMenu={e => e.preventDefault()} onDragStart={e => e.preventDefault()} className={`pokemon-picture hidden-${hidden}`} src={imgUrl} />
                 </Col>
-            </Row>
+            </Row >
             {showHint && <Hints pokemon={pokemon} />}
             <Row>
                 {correct ?
