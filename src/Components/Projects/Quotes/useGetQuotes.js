@@ -24,7 +24,6 @@ const useGetQuotes = () => {
             url: MOVIE_API_URL + '/quote',
             responseType: 'json'
         }).then(res => {
-            console.log({ res })
             return res
         }).catch(err => {
             console.log('Get Movie Quote Error: ', { err })
