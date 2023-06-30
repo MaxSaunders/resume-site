@@ -46,7 +46,7 @@ const useGetPokemon = () => {
         return getPokemonList().then(async () => {
             const arr = []
             const pokeCount = 1010
-            const pokeIndices = getRandomNumbers(1, pokeCount + 1, numberOfPokemon)
+            const pokeIndices = getRandomNumbers(1, pokeCount, numberOfPokemon)
 
             while ((arr?.length < numberOfPokemon)) {
                 const pokemon = await getPokemon(pokeIndices[arr?.length])

@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import { useEffect, useState, useCallback } from 'react'
 import { ImSpinner5 } from 'react-icons/im'
 
+import { getRandomNumbers } from '../../../utils/getRandom'
 import useGetPokemon from './useGetPokemon'
 import Options from './Options'
 import Header from './Header'
@@ -11,7 +12,7 @@ import title from './pokemonTitle.png'
 import './index.scss'
 
 const PokemonGame = ({ difficulty, exitGame }) => {
-    const { getRandomPokemon } = useGetPokemon()
+    const { getPokemon } = useGetPokemon()
     const [pokemon, setPokemon] = useState({})
     const [pokemonNameArray, setPokemonNameArray] = useState([])
     const [loading, setLoading] = useState(false)
@@ -31,11 +32,11 @@ const PokemonGame = ({ difficulty, exitGame }) => {
         setGuessed(false)
     }, [])
 
-    const fetchRandomPokemonName = useCallback(() => {
-        getRandomPokemon(3).then(res => {
-            setPokemonNameArray(i => [...i, ...res.map(p => p.name)]?.sort())
-        })
-    }, [getRandomPokemon])
+    const fetchRandomPokemonName = useCallback(indexArray => {
+        getPokemon(indexArray[0]).then(res => setPokemonNameArray(i => [...i, res.name]))
+        getPokemon(indexArray[1]).then(res => setPokemonNameArray(i => [...i, res.name]))
+        getPokemon(indexArray[2]).then(res => setPokemonNameArray(i => [...i, res.name]))
+    }, [getPokemon])
 
     const fetchPokemon = useCallback(() => {
         setShowHint(false)
@@ -44,13 +45,15 @@ const PokemonGame = ({ difficulty, exitGame }) => {
         setGuessed(false)
         setHidden(true)
         setPokemonNameArray([])
+        getRandomNumbers()
+        const pokeCount = 1010
+        const randomNumbers = getRandomNumbers(1, pokeCount, 4)
 
         if (difficulty == 'EASY') {
-            fetchRandomPokemonName()
+            fetchRandomPokemonName(randomNumbers.splice(1, 3))
         }
 
-        getRandomPokemon().then(res => {
-            const pokeRes = res[0]
+        getPokemon(randomNumbers[0]).then(pokeRes => {
             setPokemon(pokeRes)
             setPokemonNameArray(i => [...i, pokeRes?.name]?.sort())
 
@@ -58,15 +61,13 @@ const PokemonGame = ({ difficulty, exitGame }) => {
                 fetchPokemon()
             }
         }).then(() => setLoading(false))
-    }, [difficulty, fetchRandomPokemonName, getRandomPokemon])
+    }, [difficulty, fetchRandomPokemonName, getPokemon])
 
     // add generation to this info
     const { name, sprites } = pokemon || {}
     const imgUrl = sprites?.other?.['official-artwork'].front_default
 
-    const _setShowHint = () => {
-        setShowHint(true)
-    }
+    const _setShowHint = () => setShowHint(true)
 
     const guess = useCallback(guessOption => {
         setPrevGuess(guessOption)
