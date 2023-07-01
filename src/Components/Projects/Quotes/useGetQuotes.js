@@ -14,7 +14,7 @@ const useGetQuotes = () => {
         }).then(res => {
             return res?.data
         }).catch(err => {
-            console.log('Get Quote Error: ', { err })
+            console.error('Get Quote Error: ', { err })
         })
     }, [])
 
@@ -26,7 +26,7 @@ const useGetQuotes = () => {
         }).then(res => {
             return res
         }).catch(err => {
-            console.log('Get Movie Quote Error: ', { err })
+            console.error('Get Movie Quote Error: ', { err })
         })
     })
 
