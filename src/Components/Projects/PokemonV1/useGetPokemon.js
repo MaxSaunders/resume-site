@@ -20,7 +20,7 @@ const useGetPokemon = () => {
         }).then(res => {
             return res?.data
         }).catch(e => {
-            console.log(e)
+            console.error(e)
         })
     }, [])
 
@@ -38,7 +38,7 @@ const useGetPokemon = () => {
         }).then(res => {
             return res?.data
         }).catch(e => {
-            console.log(e)
+            console.error(e)
         })
     }, [])
 

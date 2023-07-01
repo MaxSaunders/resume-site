@@ -17,7 +17,7 @@ const Quotes = () => {
         getQuote().then(res => {
             setRandomQuote(res)
         }).catch(err => {
-            console.log({ err })
+            console.error({ err })
         })
         setLoading(false)
     }, [getQuote])
@@ -27,7 +27,7 @@ const Quotes = () => {
     //         console.log({ res })
     //         setMovieQuote(res)
     //     }).catch(err => {
-    //         console.log({ err })
+    //         console.error({ err })
     //     })
     // }, [getMovieQuote])
 
