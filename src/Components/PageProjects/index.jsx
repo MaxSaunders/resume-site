@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
-import { BsFillChatLeftQuoteFill } from 'react-icons/bs'
+import { BsFillChatLeftQuoteFill, BsArrowLeft } from 'react-icons/bs'
 import { SiHackster, SiPokemon } from 'react-icons/si'
 import { TbError404 } from 'react-icons/tb'
-import { BsArrowLeft } from 'react-icons/bs'
+import { TiWeatherPartlySunny } from 'react-icons/ti'
 
 import Page404 from '../Page404';
 import Quotes from '../Projects/Quotes';
 import Pokemon from '../Projects/PokemonV1';
+import WeatherApp from '../Projects/Weather';
 import HackerTextDemo from '../Projects/HackerText';
 import './index.scss'
 
@@ -37,7 +38,8 @@ const CardGrid = () =>
         <ProjectCard title='404 Page' path="404" ChildrenComp={<TbError404 size='150px' />} />
         <ProjectCard title='Hacker Text' path="hacker" ChildrenComp={<SiHackster size='150px' />} />
         <ProjectCard title='Quotes' path="quotes" ChildrenComp={<BsFillChatLeftQuoteFill size='150px' />} />
-        <ProjectCard title='Guess That Pokemon v1' path="pokemon" ChildrenComp={<SiPokemon size='150px' />} />
+        <ProjectCard title='Guess That Pokemon v1' path="pokemon/v1" ChildrenComp={<SiPokemon size='150px' />} />
+        <ProjectCard title='Weather App' path="weather" ChildrenComp={<TiWeatherPartlySunny size='150px' />} />
     </Row>
 
 const PageProjects = () => {
@@ -46,7 +48,7 @@ const PageProjects = () => {
 
     return (
         <div className='page-projects-body'>
-            <Container className='mt-5'>
+            <Container className='mt-3 px-5'>
                 <div className='pb-4 d-flex'>
                     <Switch>
                         <Route exact path={path + '/*'} render={() =>
@@ -64,7 +66,8 @@ const PageProjects = () => {
                     <Route path={path + "/404"} component={Page404} />
                     <Route path={path + "/hacker"} component={HackerTextDemo} />
                     <Route path={path + "/quotes"} component={Quotes} />
-                    <Route path={path + "/pokemon"} component={Pokemon} />
+                    <Route path={path + "/pokemon/v1"} component={Pokemon} />
+                    <Route path={path + "/weather"} component={WeatherApp} />
                     <Route exact path={path + "/*"} component={Page404} />
                 </Switch>
             </Container >
