@@ -4,7 +4,8 @@ import './index.scss'
 
 const Particle = () =>
     <Particles
-        id="tsparticles"
+        id='tsparticles'
+        className='ts-particles'
         params={{
             particles: {
                 number: {

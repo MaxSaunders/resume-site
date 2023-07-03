@@ -12,7 +12,7 @@ const useHoverMouse = (onHover, shouldHover) => {
     useEffect(() => {
         if (shouldHover) {
             const handleClickOutside = ev => {
-                if (elementRef.current && elementRef.current.contains(ev.target)) {
+                if (elementRef?.current?.contains(ev.target)) {
                     onHover(ev)
                 }
             }
@@ -90,7 +90,7 @@ const HackerTextDemo = () =>
         <div className='text-hacker'>
             {`$ `}
             <HackerText>
-                I spent a lot of time recreating this affect
+                I spent a lot of time recreating this effect
             </HackerText>
         </div>
         <div className='text-hacker'>
