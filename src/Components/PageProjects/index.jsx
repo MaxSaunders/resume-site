@@ -2,7 +2,7 @@
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
 import { BsFillChatLeftQuoteFill, BsArrowLeft } from 'react-icons/bs'
-import { SiHackster, SiPokemon } from 'react-icons/si'
+import { SiHackster, SiNintendoswitch, SiPokemon } from 'react-icons/si'
 import { TbError404 } from 'react-icons/tb'
 import { TiWeatherPartlySunny } from 'react-icons/ti'
 
@@ -10,6 +10,7 @@ import Page404 from '../Page404';
 import Quotes from '../Projects/Quotes';
 import Pokemon from '../Projects/PokemonV1';
 import WeatherApp from '../Projects/Weather';
+import SwitchHome from '../Projects/Nintendo';
 import HackerTextDemo from '../Projects/HackerText';
 import './index.scss'
 
@@ -38,9 +39,17 @@ const CardGrid = () =>
         <ProjectCard title='404 Page' path="404" ChildrenComp={<TbError404 size='150px' />} />
         <ProjectCard title='Hacker Text' path="hacker" ChildrenComp={<SiHackster size='150px' />} />
         <ProjectCard title='Quotes' path="quotes" ChildrenComp={<BsFillChatLeftQuoteFill size='150px' />} />
-        <ProjectCard title='Guess That Pokemon v1' path="pokemon/v1" ChildrenComp={<SiPokemon size='150px' />} />
+        <ProjectCard title='Name That Pokemon v1' path="pokemon/v1" ChildrenComp={<SiPokemon size='150px' />} />
         <ProjectCard title='Weather App' path="weather" ChildrenComp={<TiWeatherPartlySunny size='150px' />} />
+        <ProjectCard title='Switch Home' path="nintendo" ChildrenComp={<SiNintendoswitch size='150px' />} />
     </Row>
+
+const ProjectRoute = ({ exact, fluid = false, path, Comp }) =>
+    <Route exact={exact} path={path} render={() =>
+        <Container fluid={fluid}>
+            <Comp />
+        </Container>
+    } />
 
 const PageProjects = () => {
     const location = useLocation()
@@ -48,29 +57,30 @@ const PageProjects = () => {
 
     return (
         <div className='page-projects-body'>
-            <Container className='mt-3 px-5'>
-                <div className='pb-4 d-flex'>
-                    <Switch>
-                        <Route exact path={path + '/*'} render={() =>
+            <div className='pb-4 d-flex'>
+                <Switch>
+                    <Route exact path={path + '/*'} render={() =>
+                        <Container>
                             <Link to={path}>
                                 <Button className='d-flex align-items-center'>
                                     <BsArrowLeft className='me-2' />
                                     Projects Home
                                 </Button>
                             </Link>
-                        } />
-                    </Switch>
-                </div>
-                <Switch location={location}>
-                    <Route exact path={path} component={CardGrid} />
-                    <Route path={path + "/404"} component={Page404} />
-                    <Route path={path + "/hacker"} component={HackerTextDemo} />
-                    <Route path={path + "/quotes"} component={Quotes} />
-                    <Route path={path + "/pokemon/v1"} component={Pokemon} />
-                    <Route path={path + "/weather"} component={WeatherApp} />
-                    <Route exact path={path + "/*"} component={Page404} />
+                        </Container>
+                    } />
                 </Switch>
-            </Container >
+            </div>
+            <Switch location={location}>
+                <ProjectRoute exact path={path} Comp={CardGrid} />
+                <ProjectRoute path={path + "/404"} Comp={Page404} />
+                <ProjectRoute path={path + "/hacker"} Comp={HackerTextDemo} />
+                <ProjectRoute path={path + "/quotes"} Comp={Quotes} />
+                <ProjectRoute path={path + "/pokemon/v1"} Comp={Pokemon} />
+                <ProjectRoute path={path + "/weather"} Comp={WeatherApp} />
+                <ProjectRoute path={path + "/nintendo"} Comp={SwitchHome} fluid />
+                <ProjectRoute exact path={path + "/*"} Comp={Page404} />
+            </Switch>
         </div>
     )
 }
