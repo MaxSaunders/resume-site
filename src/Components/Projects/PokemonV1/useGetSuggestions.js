@@ -1,10 +1,10 @@
 import { useCallback } from "react"
 
-const useGetSuggestions = (options, limit = 10) => {
+const useGetSuggestions = (options, limit = 10, correctAnswer = '') => {
 
-    const getSuggestions = useCallback(guess => {
+    const getSuggestions = useCallback((guess) => {
         let size = 0
-        return options?.filter(o => {
+        let optionsTemp = options?.filter(o => {
             if (size < limit) {
                 if (o?.toUpperCase()?.includes(guess?.toUpperCase())) {
                     size++
@@ -12,7 +12,13 @@ const useGetSuggestions = (options, limit = 10) => {
                 }
             }
         })
-    }, [limit, options])
+
+        if (!optionsTemp?.contains(correctAnswer)) {
+            optionsTemp = [...optionsTemp, correctAnswer]
+        }
+
+        return optionsTemp.sort((a, b) => a < b)
+    }, [correctAnswer, limit, options])
 
     return {
         getSuggestions

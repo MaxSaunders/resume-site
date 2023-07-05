@@ -127,21 +127,25 @@ const SwitchHome = () => {
 
     if (screenSize > VIEWS.md) {
         return (
-            <SwitchContext.Provider value={contextValue}>
-                <SwitchContainer setSelected={setSelected}>
-                    <SwitchScreen />
-                </SwitchContainer>
-            </SwitchContext.Provider>
+            <div className='switch-project-container'>
+                <SwitchContext.Provider value={contextValue}>
+                    <SwitchContainer setSelected={setSelected}>
+                        <SwitchScreen />
+                    </SwitchContainer>
+                </SwitchContext.Provider>
+            </div>
         )
     }
 
     if (screenSize > VIEWS.xs) {
         return (
-            <SwitchContext.Provider value={contextValue}>
-                <div className='switch-small-container'>
-                    <SwitchScreen />
-                </div>
-            </SwitchContext.Provider>
+            <div className='switch-project-container'>
+                <SwitchContext.Provider value={contextValue}>
+                    <div className='switch-small-container'>
+                        <SwitchScreen />
+                    </div>
+                </SwitchContext.Provider>
+            </div>
         )
     }
 
