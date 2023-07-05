@@ -9,12 +9,12 @@ const Header = ({ resetGame, correct, streak = 0, exitGame, difficulty = 'EASY' 
         <>
             {Modal}
             <Col xs={12}>
-                <h1 className='pokemon-title'>
-                    <img src={title} className='mw-100' />
+                <h1 className='pokemon-title mb-0'>
+                    <img src={title} className='mw-100 mb-0' />
                 </h1>
             </Col>
-            <Col xs={{ span: 12, order: 1 }} sm={{ span: 6, order: 1 }} md={{ span: 3, order: 1 }}
-                className='my-3 d-flex justify-content-center align-items-center'
+            <Col xs={{ span: 6, order: 1 }} sm={{ span: 6, order: 1 }} md={{ span: 3, order: 1 }}
+                className='my-1 d-flex justify-content-center align-items-center'
             >
                 <Button className='game-option w-100 btn-danger' ref={buttonRef}>
                     Exit Game
@@ -35,8 +35,8 @@ const Header = ({ resetGame, correct, streak = 0, exitGame, difficulty = 'EASY' 
                     </Col>
                 </Row>
             </Col>
-            <Col xs={{ span: 12, order: 2 }} sm={{ span: 6, order: 2 }} md={{ span: 3, order: 3 }}
-                className='my-3 d-flex justify-content-center align-items-center'
+            <Col xs={{ span: 6, order: 2 }} sm={{ span: 6, order: 2 }} md={{ span: 3, order: 3 }}
+                className='my-1 d-flex justify-content-center align-items-center'
             >
                 <Button disabled={correct} className='game-option w-100' onClick={resetGame}>
                     Restart

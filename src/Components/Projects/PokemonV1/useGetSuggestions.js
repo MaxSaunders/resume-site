@@ -4,20 +4,20 @@ const useGetSuggestions = (options, limit = 10, correctAnswer = '') => {
 
     const getSuggestions = useCallback((guess) => {
         let size = 0
-        let optionsTemp = options?.filter(o => {
+        let optionsTemp = options
+
+        if (!optionsTemp?.includes(correctAnswer)) {
+            optionsTemp = [...optionsTemp, correctAnswer]
+        }
+
+        return optionsTemp?.filter(o => {
             if (size < limit) {
                 if (o?.toUpperCase()?.includes(guess?.toUpperCase())) {
                     size++
                     return true
                 }
             }
-        })
-
-        if (!optionsTemp?.includes(correctAnswer)) {
-            optionsTemp = [...optionsTemp, correctAnswer]
-        }
-
-        return optionsTemp.sort((a, b) => a < b)
+        }).sort((a, b) => a.localeCompare(b))
     }, [correctAnswer, limit, options])
 
     return {
