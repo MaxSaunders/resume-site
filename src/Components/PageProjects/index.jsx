@@ -69,12 +69,12 @@ const PageProjects = () => {
 
     return (
         <div className='page-projects-body'>
-            <div className='p-5 d-flex'>
+            <div className='p-3 d-flex'>
                 <Switch>
                     <Route exact path={path + '/*'} render={() =>
                         <Container>
                             <Row className='project-body-buttons'>
-                                <Col xs={12} md={4} lg={3} className='mb-4 mb-md-0'>
+                                <Col xs={12} md={4} lg={3} className=''>
                                     <Link to={path}>
                                         <Button className='w-100 d-flex align-items-center justify-content-between fs-5'>
                                             <HiHome className='me-2' size='24px' />
