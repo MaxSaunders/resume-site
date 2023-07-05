@@ -54,7 +54,6 @@ const PokemonGame = ({ difficulty, exitGame }) => {
         }
 
         getPokemon(randomNumbers[0]).then(pokeRes => {
-            // getPokemon(randomNumbers[0]).then(pokeRes => {
             setPokemon(pokeRes)
             setPokemonNameArray(i => [...i, pokeRes?.name]?.sort())
 
@@ -134,14 +133,14 @@ const PokemonGame = ({ difficulty, exitGame }) => {
             <Row>
                 <Col xs={12}>
                     {hidden ?
-                        <span className='mt-4 pokemon-name'>&nbsp;&nbsp;</span>
+                        <></>
                         :
                         <span className={`mt-4 pokemon-name guess-${correct}`}>
                             {name?.toUpperCase()}
                         </span>
                     }
                 </Col>
-                <Col className='mb-5' xs={12} onDragStart={e => e.preventDefault()}>
+                <Col className='mb-1' xs={12} onDragStart={e => e.preventDefault()}>
                     <img onContextMenu={e => e.preventDefault()} onDragStart={e => e.preventDefault()} className={`pokemon-picture hidden-${hidden}`} src={imgUrl} />
                 </Col>
             </Row >
@@ -172,15 +171,15 @@ const Pokemon = () => {
 
     if (!difficulty) {
         return (
-            <Container className='pokemon-menu'>
+            <Container className='pokemon-menu pokemon-game'>
                 <Row>
-                    <Col className='mb-5'>
+                    <Col className='mb-1'>
                         <img src={title} className='mw-100' />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h2 className='text-dark mb-5 fw-bold'>
+                        <h2 className='text-dark mb-1 fw-bold'>
                             Please pick a difficulty:
                         </h2>
                     </Col>
@@ -192,7 +191,7 @@ const Pokemon = () => {
                         </Button>
                     </Col>
                     <Col>
-                        <Button className='menu-btn' onClick={() => setDifficulty('HARD')}>
+                        <Button className='menu-btn btn-danger' onClick={() => setDifficulty('HARD')}>
                             HARD
                         </Button>
                     </Col>
