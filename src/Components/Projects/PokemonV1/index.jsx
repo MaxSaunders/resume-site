@@ -53,7 +53,7 @@ const PokemonGame = ({ difficulty, exitGame }) => {
             fetchRandomPokemonName(randomNumbers.splice(1, 3))
         }
 
-        getPokemon(905).then(pokeRes => {
+        getPokemon(randomNumbers[0]).then(pokeRes => {
             // getPokemon(randomNumbers[0]).then(pokeRes => {
             setPokemon(pokeRes)
             setPokemonNameArray(i => [...i, pokeRes?.name]?.sort())
