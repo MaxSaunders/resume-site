@@ -11,7 +11,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
     // TODO: maybe add language options
 
     const [input, setInput] = useState('')
-    const { getSuggestions } = useGetSuggestions(nameOptions, 30, correctAnswer)
+    const { getSuggestions } = useGetSuggestions(nameOptions, 20, correctAnswer)
 
     const suggestions = useMemo(() => {
         return getSuggestions(input)
@@ -33,7 +33,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
             <Col>
                 <Container fluid>
                     <Row>
-                        <Col xs={12} md={2} className='mb-3 mb-md-0'>
+                        <Col xs={12} md={2} className='mb-2 mb-md-0'>
                             <OverlayTrigger
                                 key='hint-button'
                                 placement='auto-start'
@@ -52,7 +52,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
                                 </Button>
                             </OverlayTrigger>
                         </Col>
-                        <Col xs={12} md={8} className='mb-3 mb-md-0'>
+                        <Col xs={12} md={8} className='mb-2 mb-md-0'>
                             <div className='pokemon-option-input'>
                                 <OverlayTrigger
                                     trigger='focus'
@@ -61,7 +61,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
                                     overlay={
                                         <Popover id='input-top' placement="top">
                                             <PopoverBody>
-                                                <div className={`pokemon-suggestions text-dark`}>
+                                                <div className={`pokemon-suggestions pop-up text-dark`}>
                                                     {suggestions?.length ?
                                                         suggestions?.map(s =>
                                                             <div className='pokemon-suggestion' key={s} onClick={() => setInput(s)}>
