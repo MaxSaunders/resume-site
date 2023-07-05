@@ -6,14 +6,16 @@ import { FaArrowRight } from "react-icons/fa"
 import useGetSuggestions from './useGetSuggestions'
 import pokemon from './pokemon.json'
 
-const Options = ({ guessed, pokemonNameArray = [], fetchPokemon, guess, difficulty = 'EASY', setShowHint = () => false }) => {
+const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, guess, difficulty = 'EASY', setShowHint = () => false }) => {
     const nameOptions = useMemo(() => pokemon?.map(p => p?.name?.english?.toUpperCase()), [])
     // TODO: maybe add language options
 
     const [input, setInput] = useState('')
-    const { getSuggestions } = useGetSuggestions(nameOptions, 30)
+    const { getSuggestions } = useGetSuggestions(nameOptions, 30, correctAnswer)
 
-    const suggestions = useMemo(() => getSuggestions(input), [input, getSuggestions])
+    const suggestions = useMemo(() => {
+        return getSuggestions(input)
+    }, [getSuggestions, input])
 
     if (guessed) {
         return (
@@ -57,7 +59,7 @@ const Options = ({ guessed, pokemonNameArray = [], fetchPokemon, guess, difficul
                                     key='top'
                                     placement='auto-start'
                                     overlay={
-                                        <Popover id='input-top'>
+                                        <Popover id='input-top' placement="top">
                                             <PopoverBody>
                                                 <div className={`pokemon-suggestions text-dark`}>
                                                     {suggestions?.length ?
@@ -116,7 +118,8 @@ Options.propTypes = {
     fetchPokemon: PropTypes.func,
     guess: PropTypes.func,
     setShowHint: PropTypes.func,
-    difficulty: PropTypes.string
+    difficulty: PropTypes.string,
+    correctAnswer: PropTypes.string,
 }
 
 export default Options
