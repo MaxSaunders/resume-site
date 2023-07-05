@@ -13,7 +13,7 @@ const useGetSuggestions = (options, limit = 10, correctAnswer = '') => {
             }
         })
 
-        if (!optionsTemp?.contains(correctAnswer)) {
+        if (!optionsTemp?.includes(correctAnswer)) {
             optionsTemp = [...optionsTemp, correctAnswer]
         }
 
