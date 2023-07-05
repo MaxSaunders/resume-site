@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import SimpleBarReact from "simplebar-react";
+import SimpleBarReact from "simplebar-react"
 import PropTypes from 'prop-types'
 
 import getIcon from './getIcon'

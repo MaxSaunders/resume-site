@@ -113,16 +113,26 @@ const Header = () => {
             </Col>
             <Col xs={5} />
             <Col xs={4} className='nintendo-switch-header-settings'>
-                <div onClick={toggle24hour} className='time-display'>
-                    <span>
-                        {`${time} `}
-                    </span>
-                    <span className='time-period'>
-                        {period}
-                    </span>
-                </div>
-                <Wifi />
-                <Battery />
+                <Container fluid>
+                    <Row>
+                        <Col xs={6}>
+                            <div onClick={toggle24hour} className='time-display'>
+                                <span>
+                                    {`${time} `}
+                                </span>
+                                <span className='time-period'>
+                                    {period}
+                                </span>
+                            </div>
+                        </Col>
+                        <Col xs={3}>
+                            <Wifi />
+                        </Col>
+                        <Col xs={3}>
+                            <Battery />
+                        </Col>
+                    </Row>
+                </Container>
             </Col>
         </Row>
     )

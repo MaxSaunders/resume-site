@@ -53,7 +53,8 @@ const PokemonGame = ({ difficulty, exitGame }) => {
             fetchRandomPokemonName(randomNumbers.splice(1, 3))
         }
 
-        getPokemon(randomNumbers[0]).then(pokeRes => {
+        getPokemon(905).then(pokeRes => {
+            // getPokemon(randomNumbers[0]).then(pokeRes => {
             setPokemon(pokeRes)
             setPokemonNameArray(i => [...i, pokeRes?.name]?.sort())
 
@@ -147,10 +148,18 @@ const PokemonGame = ({ difficulty, exitGame }) => {
             {showHint && <Hints pokemon={pokemon} />}
             <Row>
                 {correct ?
-                    <Options setShowHint={_setShowHint} difficulty={difficulty} guessed={guessed} pokemonNameArray={pokemonNameArray} fetchPokemon={fetchPokemon} guess={guess} />
+                    <Options
+                        correctAnswer={name?.toUpperCase()}
+                        setShowHint={_setShowHint}
+                        difficulty={difficulty}
+                        guessed={guessed}
+                        pokemonNameArray={pokemonNameArray}
+                        fetchPokemon={fetchPokemon}
+                        guess={guess}
+                    />
                     :
                     <div className='pokemon-name guess-false'>
-                        {`You guessed: ${prevGuess}`}
+                        {`You guessed: ${prevGuess?.toUpperCase()}`}
                     </div>
                 }
             </Row >
