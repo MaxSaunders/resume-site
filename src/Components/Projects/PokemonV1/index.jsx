@@ -4,11 +4,10 @@ import { useEffect, useState, useCallback } from 'react'
 import { ImSpinner5 } from 'react-icons/im'
 
 import { getRandomNumbers } from '../../../utils/getRandom'
+import Header, { LogoHeader } from './Header'
 import useGetPokemon from './useGetPokemon'
 import Options from './Options'
-import Header from './Header'
 import Hints from './Hints'
-import title from './pokemonTitle.png'
 import './index.scss'
 
 const PokemonGame = ({ difficulty, exitGame }) => {
@@ -45,7 +44,6 @@ const PokemonGame = ({ difficulty, exitGame }) => {
         setGuessed(false)
         setHidden(true)
         setPokemonNameArray([])
-        getRandomNumbers()
         const pokeCount = 1010
         const randomNumbers = getRandomNumbers(1, pokeCount, 4)
 
@@ -111,9 +109,7 @@ const PokemonGame = ({ difficulty, exitGame }) => {
             <Container className='pokemon-game'>
                 <Row>
                     <Col xs={12}>
-                        <h1 className='pokemon-title'>
-                            <img src={title} className='mw-100' />
-                        </h1>
+                        <LogoHeader />
                     </Col>
                 </Row>
                 <Row className='d-flex align-items-center justify-content-center'>
@@ -173,24 +169,24 @@ const Pokemon = () => {
         return (
             <Container className='pokemon-menu pokemon-game'>
                 <Row>
-                    <Col className='mb-1'>
-                        <img src={title} className='mw-100' />
+                    <Col>
+                        <LogoHeader />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h2 className='text-dark mb-1 fw-bold'>
+                        <h2 className='text-dark mb-0 mt-4 fw-bold'>
                             Please pick a difficulty:
                         </h2>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
+                <Row className='mt-5'>
+                    <Col xs={12} md={6}>
                         <Button className='menu-btn mb-4' onClick={() => setDifficulty('EASY')}>
                             EASY
                         </Button>
                     </Col>
-                    <Col>
+                    <Col xs={12} md={6}>
                         <Button className='menu-btn btn-danger' onClick={() => setDifficulty('HARD')}>
                             HARD
                         </Button>
