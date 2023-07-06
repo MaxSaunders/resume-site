@@ -33,7 +33,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
             <Col>
                 <Container fluid>
                     <Row>
-                        <Col xs={12} md={2} className='mb-2 mb-md-0'>
+                        <Col xs={{ span: 6, order: 1 }} md={{ span: 2, order: 1 }} className='mb-2 mb-md-0'>
                             <OverlayTrigger
                                 key='hint-button'
                                 placement='auto-start'
@@ -52,7 +52,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
                                 </Button>
                             </OverlayTrigger>
                         </Col>
-                        <Col xs={12} md={8} className='mb-2 mb-md-0'>
+                        <Col xs={{ span: 12, order: 3 }} md={{ span: 8, order: 2 }} className='mb-2 mb-md-0'>
                             <div className='pokemon-option-input'>
                                 <OverlayTrigger
                                     trigger='focus'
@@ -64,6 +64,7 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
                                                 <div className={`pokemon-suggestions pop-up text-dark`}>
                                                     {suggestions?.length ?
                                                         suggestions?.map(s =>
+                                                            // this is not working correctly
                                                             <div className='pokemon-suggestion' key={s} onClick={() => setInput(s)}>
                                                                 {s}
                                                             </div>
@@ -87,8 +88,8 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
                                 </OverlayTrigger>
                             </div>
                         </Col>
-                        <Col xs={12} md={2}>
-                            <Button size='lg' className='w-100 fw-bold' onClick={() => guess(input)}>
+                        <Col xs={{ span: 6, order: 2 }} md={{ span: 2, order: 3 }}>
+                            <Button size='lg' className='mb-2 mb-md-0 w-100 fw-bold' onClick={() => guess(input)}>
                                 GUESS
                             </Button>
                         </Col>
@@ -102,8 +103,8 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
         <>
             {pokemonNameArray?.map(option =>
                 option &&
-                <Col xs={12} md={3} key={option}>
-                    <Button className='w-100 mb-3 pokemon-option' onClick={() => guess(option)}>
+                <Col xs={6} md={3} key={option} className='mb-2 mb-md-0'>
+                    <Button className='h-100 w-100 mb-3 pokemon-option' onClick={() => guess(option)}>
                         {option?.toUpperCase()}
                     </Button>
                 </Col>

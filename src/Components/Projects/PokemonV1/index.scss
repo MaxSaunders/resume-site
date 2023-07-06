@@ -1,8 +1,20 @@
+
+@media (max-width: 767px) {
+    .pokemon-game {
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pokemon-game {
+        padding: 15px;
+    }
+}
+
 .pokemon-game {
     background-color: white;
     border-radius: 10px;
     border: 5px solid black;
-    padding: 15px;
 
     .pokemon-title {
         color: purple;
@@ -11,6 +23,20 @@
     .exit-button {
         font-weight: 700;
         font-size: 20px;
+    }
+
+    .pokemon-game-header {
+        .help-circle-icon {
+            min-width: 30px;
+            max-width: 50px;
+            color: black;
+            
+            &:hover {
+                transform: scale(1.1);
+                color: purple;
+                cursor: pointer;
+            }
+        }
     }
 
     &.pokemon-menu {
@@ -27,7 +53,7 @@
 
     .loading-spinner {
         animation: spin 4s linear infinite;
-        margin: 20px 0 0 0;
+        margin: 20px 0 40px 0;
     }
 
     .pokemon-logo-spinner {
@@ -65,7 +91,7 @@
         }
 
         .pokemon-picture {
-            max-width: 70%;
+            max-width: 60%;
             
             &.hidden-true {
                 filter: brightness(0) saturate(0%);
