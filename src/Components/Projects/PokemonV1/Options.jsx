@@ -1,21 +1,25 @@
 import { useState, useMemo } from "react"
-import PropTypes from 'prop-types'
-import { Button, Col, Container, Form, OverlayTrigger, Popover, PopoverBody, Row } from "react-bootstrap"
+import { Button, Col, Container, OverlayTrigger, Popover, PopoverBody, Row } from "react-bootstrap"
 import { FaArrowRight } from "react-icons/fa"
+import { DropdownList } from "react-widgets"
+import PropTypes from 'prop-types'
 
-import useGetSuggestions from './useGetSuggestions'
 import pokemon from './pokemon.json'
 
 const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, guess, difficulty = 'EASY', setShowHint = () => false }) => {
-    const nameOptions = useMemo(() => pokemon?.map(p => p?.name?.english?.toUpperCase()), [])
-    // TODO: maybe add language options
-
-    const [input, setInput] = useState('')
-    const { getSuggestions } = useGetSuggestions(nameOptions, 20, correctAnswer)
-
     const suggestions = useMemo(() => {
-        return getSuggestions(input)
-    }, [getSuggestions, input])
+        return [...pokemon, correctAnswer]
+            .filter(p => p?.name?.english)
+            .map(p => {
+                const name = p?.name?.english?.toUpperCase()
+                return {
+                    value: name,
+                    label: name
+                }
+            }).sort((a, b) => a.label.localeCompare(b.label))
+    }, [correctAnswer])
+
+    const [input, setInput] = useState()
 
     if (guessed) {
         return (
@@ -54,38 +58,15 @@ const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, 
                         </Col>
                         <Col xs={{ span: 12, order: 3 }} md={{ span: 8, order: 2 }} className='mb-2 mb-md-0'>
                             <div className='pokemon-option-input'>
-                                <OverlayTrigger
-                                    trigger='focus'
-                                    key='top'
-                                    placement='auto-start'
-                                    overlay={
-                                        <Popover id='input-top' placement="top">
-                                            <PopoverBody>
-                                                <div className={`pokemon-suggestions pop-up text-dark`}>
-                                                    {suggestions?.length ?
-                                                        suggestions?.map(s =>
-                                                            // this is not working correctly
-                                                            <div className='pokemon-suggestion' key={s} onClick={() => setInput(s)}>
-                                                                {s}
-                                                            </div>
-                                                        )
-                                                        :
-                                                        <div className='pokemon-suggestion' key='no-suggestions'>
-                                                            NO SUGGESTIONS
-                                                        </div>
-                                                    }
-                                                </div>
-                                            </PopoverBody>
-                                        </Popover>
-                                    }>
-                                    <Form.Control
-                                        value={input}
-                                        size='lg'
-                                        onChange={e => setInput(e.target.value)}
-                                        as='input'
-                                        placeholder='Guess Here'
-                                    />
-                                </OverlayTrigger>
+                                <DropdownList
+                                    placeholder='Guess Here'
+                                    onToggle={(e) => e && setInput('')}
+                                    dataKey='value'
+                                    textField='label'
+                                    value={input}
+                                    onChange={e => setInput(e.value)}
+                                    data={suggestions}
+                                />
                             </div>
                         </Col>
                         <Col xs={{ span: 6, order: 2 }} md={{ span: 2, order: 3 }}>
