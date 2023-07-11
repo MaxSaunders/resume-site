@@ -19,6 +19,7 @@ const InstructionsModal = ({ close }) =>
                 <h5 className='text-align-start my-4'>
                     <div>
                         Easy Mode:
+                        {/* TODO: add description */}
                     </div>
                     <div>
 
