@@ -4,7 +4,8 @@ import { Link, Route, Switch, useLocation, useRouteMatch } from 'react-router-do
 import { SiHackster, SiNintendoswitch, SiPokemon } from 'react-icons/si'
 import {
     // BsArrowsFullscreen,
-    BsFillChatLeftQuoteFill
+    BsFillChatLeftQuoteFill,
+    BsTable,
 } from 'react-icons/bs'
 import { TiWeatherPartlySunny } from 'react-icons/ti'
 import { AiOutlineDashboard } from 'react-icons/ai';
@@ -13,6 +14,7 @@ import { HiHome } from 'react-icons/hi'
 import SimpleBarReact from 'simplebar-react'
 
 import Page404 from '../Page404';
+import Table from '../Projects/Table'
 import Quotes from '../Projects/Quotes';
 import Pokemon from '../Projects/PokemonV1';
 import AdminPortal from '../Projects/Admin';
@@ -51,6 +53,7 @@ const CardGrid = () =>
             <ProjectCard title='Weather App' path='weather' ChildrenComp={<TiWeatherPartlySunny size='150px' />} />
             <ProjectCard title='Switch Home' path='nintendo' ChildrenComp={<SiNintendoswitch size='150px' />} />
             <ProjectCard title='Admin Dashboard' path='dashboard' ChildrenComp={<AiOutlineDashboard size='150px' />} />
+            <ProjectCard title='Table Demo' path='table' ChildrenComp={<BsTable size='150px' />} />
         </Row>
     </SimpleBarReact>
 
@@ -106,8 +109,9 @@ const PageProjects = () => {
                 <ProjectRoute path={path + '/quotes'} Comp={Quotes} />
                 <ProjectRoute path={path + '/pokemon/v1'} Comp={Pokemon} />
                 <ProjectRoute path={path + '/weather'} Comp={WeatherApp} />
-                <ProjectRoute path={path + '/dashboard'} Comp={AdminPortal} />
                 <ProjectRoute path={path + '/nintendo'} Comp={SwitchHome} fluid />
+                <ProjectRoute path={path + '/dashboard'} Comp={AdminPortal} />
+                <ProjectRoute path={path + '/table'} Comp={Table} fluid />
                 <ProjectRoute exact path={path + '/*'} Comp={Page404} fluid />
             </Switch>
         </div>

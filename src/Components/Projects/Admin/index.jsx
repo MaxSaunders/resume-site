@@ -34,8 +34,10 @@ const SatisfactionGraph = () => {
             {`Customer Satisfaction`}
             <GaugeChart
                 animate={false}
+                // animate={true}
                 needleColor="#3b14d3"
-                needleBaseColor="#795ee8"
+                needleBaseColor="#3b14d3"
+                // needleBaseColor="#795ee8"
                 nrOfLevels={3}
                 colors={['#795ee8', '#3b14d3']}
                 percent={satAvg / 5}
