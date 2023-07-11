@@ -6,17 +6,16 @@ import PropTypes from 'prop-types'
 
 import pokemon from './pokemon.json'
 
-const Options = ({ guessed, correctAnswer, pokemonNameArray = [], fetchPokemon, guess, difficulty = 'EASY', setShowHint = () => false }) => {
+const Options = ({ guessed, correctAnswer = '', pokemonNameArray = [], fetchPokemon, guess, difficulty = 'EASY', setShowHint = () => false }) => {
     const suggestions = useMemo(() => {
-        return [...pokemon, correctAnswer]
-            .filter(p => p?.name?.english)
+        return [...pokemon.filter(p => p?.name?.english)
             .map(p => {
                 const name = p?.name?.english?.toUpperCase()
                 return {
                     value: name,
                     label: name
                 }
-            }).sort((a, b) => a.label.localeCompare(b.label))
+            }), { label: correctAnswer, value: correctAnswer }].sort((a, b) => a.label.localeCompare(b.label))
     }, [correctAnswer])
 
     const [input, setInput] = useState()
