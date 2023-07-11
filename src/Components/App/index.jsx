@@ -1,4 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-widgets/styles.css";
+
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
   HashRouter as Router,

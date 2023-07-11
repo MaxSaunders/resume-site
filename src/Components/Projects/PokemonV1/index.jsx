@@ -68,6 +68,7 @@ const PokemonGame = ({ difficulty, exitGame }) => {
     const _setShowHint = () => setShowHint(true)
 
     const guess = useCallback(guessOption => {
+        if (!guessOption) return
         setPrevGuess(guessOption)
         setGuessed(true)
         if (guessOption?.toUpperCase() == name?.toUpperCase()) {

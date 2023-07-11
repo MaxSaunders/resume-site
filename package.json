@@ -26,6 +26,7 @@
     "react-router-dom": "^5.2.0",
     "react-transition-group": "^4.4.5",
     "react-tsparticles": "^1.42.2",
+    "react-widgets": "^5.8.4",
     "sass": "^1.62.1",
     "simplebar-react": "^3.2.4"
   },

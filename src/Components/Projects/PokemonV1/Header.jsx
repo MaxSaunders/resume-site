@@ -46,7 +46,7 @@ export const LogoHeader = () => {
     return (
         <Row className='pokemon-game-header'>
             <Col xs={1} md={2} />
-            <Col className='mb-1'>
+            <Col className='mb-1 mt-2'>
                 <img src={title} className='mw-100' />
             </Col>
             <Col xs={1} md={2} className='d-flex align-items-center justify-content-center'>
