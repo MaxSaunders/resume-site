@@ -30,7 +30,6 @@ const SelectInputField = ({ label = '', options = [] }) => {
                         </div>
                     )}
                 </div>
-                {console.log({ showSuggestions })}
             </div>
         </>
     )
