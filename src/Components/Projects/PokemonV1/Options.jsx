@@ -8,14 +8,21 @@ import pokemon from './pokemon.json'
 
 const Options = ({ guessed, correctAnswer = '', pokemonNameArray = [], fetchPokemon, guess, difficulty = 'EASY', setShowHint = () => false }) => {
     const suggestions = useMemo(() => {
-        return [...pokemon.filter(p => p?.name?.english)
-            .map(p => {
-                const name = p?.name?.english?.toUpperCase()
-                return {
-                    value: name,
-                    label: name
-                }
-            }), { label: correctAnswer, value: correctAnswer }].sort((a, b) => a.label.localeCompare(b.label))
+        const names = pokemon.filter(p => p?.name?.english).map(p => p?.name?.english?.toUpperCase())
+
+        if (!names.includes(correctAnswer)) {
+            names.push(correctAnswer)
+        }
+
+        const arrTemp = names.map(name => {
+            if (!name) return
+            return {
+                value: name,
+                label: name
+            }
+        })
+
+        return arrTemp.sort((a, b) => a.label.localeCompare(b.label))
     }, [correctAnswer])
 
     const [input, setInput] = useState()

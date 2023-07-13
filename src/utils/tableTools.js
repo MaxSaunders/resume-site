@@ -1,7 +1,6 @@
 export const standardize = s => s?.trim()?.toUpperCase()
 
 export const paginate = ({ page = 0, pageSize = 10 } = {}, rows) =>
-    console.log({ page, pageSize, rows }) ||
     rows.slice(page * pageSize, page * pageSize + pageSize)
 
 export const fieldSorter = id => (a, b) => {

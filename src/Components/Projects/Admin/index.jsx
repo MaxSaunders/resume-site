@@ -66,8 +66,6 @@ const AdminPortal = () => {
         })
     }, [])
 
-    console.log(data)
-
     return (
         <DashboardContext.Provider value={data}>
             <Container fluid className={`dashboard-container dashboard-loading-${loading}`}>
