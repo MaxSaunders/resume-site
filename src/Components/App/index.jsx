@@ -14,7 +14,6 @@ import Page404 from '../Page404';
 import Particle from './Particle';
 import PageHome from "../PageHome";
 import PageResume from '../PageResume';
-import PageProjects from '../PageProjects';
 import './index.scss'
 
 const AnimatedWrapper = () => {
@@ -29,7 +28,6 @@ const AnimatedWrapper = () => {
           <Switch location={location}>
             <Route exact path="/" component={PageHome} />
             <Route path="/resume" component={PageResume} />
-            <Route path="/projects" component={PageProjects} />
             <Route exact path="*" component={Page404} />
           </Switch>
         </CSSTransition>

@@ -9,12 +9,6 @@ import { SiPolymerproject } from 'react-icons/si'
 // import logo from '../../assets/logo-1-sm.png'
 import './index.scss'
 
-// const DropdownTitle = () =>
-//     <>
-//         <AiOutlineProject size='23' className='me-2' />
-//         OTHER
-//     </>
-
 const Routes = ({ close }) => {
     const { pathname } = useLocation()
 
@@ -33,10 +27,10 @@ const Routes = ({ close }) => {
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link onClick={close} active={pathname === '/projects'} className='mb-4 mb-md-0 justify-space-between' as={Link} to='/projects'>
+                <a onClick={close} className='mb-4 mb-md-0  link-a nav-link justify-space-between' target='_blank' href='https://maxsaunders.github.io/dev-projects/' rel="noreferrer">
                     <AiOutlineProject size='23' className='me-2' />
                     Projects
-                </Nav.Link>
+                </a>
             </Nav.Item>
             <Nav.Item>
                 <a onClick={close} className='mb-4 mb-md-0 link-a nav-link justify-space-between' target='_blank' href='https://github.com/MaxSaunders' rel="noreferrer">
