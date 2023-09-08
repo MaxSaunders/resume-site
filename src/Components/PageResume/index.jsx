@@ -105,7 +105,7 @@ const PageResume = () => {
                                     <Page
                                         className=''
                                         pageNumber={1}
-                                        scale={Math.max(Math.min((width / 1900), 1), .75)}
+                                        scale={Math.max(Math.min((width / 3500), .7), .45)}
                                         renderTextLayer={false}
                                         renderAnnotationLayer={false}
                                     />
