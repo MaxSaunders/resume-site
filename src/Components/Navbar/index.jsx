@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { CloseButton, Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
-import { AiOutlineProject, AiOutlineHome, AiFillGithub, AiOutlineMenuFold, AiOutlineMail } from 'react-icons/ai'
+import { AiOutlineHome, AiFillGithub, AiOutlineMenuFold, AiOutlineMail } from 'react-icons/ai'
 import { CgFileDocument } from 'react-icons/cg'
 import { SiPolymerproject } from 'react-icons/si'
 
@@ -33,10 +33,10 @@ const Routes = ({ close }) => {
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link onClick={close} active={pathname === '/projects'} className='mb-4 mb-md-0 justify-space-between' as={Link} to='/projects'>
-                    <AiOutlineProject size='23' className='me-2' />
+                <a onClick={close} className='mb-4 mb-md-0 link-a nav-link justify-space-between' target='_blank' href='https://maxsaunders.github.io/dev-projects/#/' rel="noreferrer">
+                    <AiFillGithub size='23' className='me-2' />
                     Projects
-                </Nav.Link>
+                </a>
             </Nav.Item>
             <Nav.Item>
                 <a onClick={close} className='mb-4 mb-md-0 link-a nav-link justify-space-between' target='_blank' href='https://github.com/MaxSaunders' rel="noreferrer">
