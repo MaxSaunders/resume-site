@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap"
-import { BiCopyright } from 'react-icons/bi'
 import ContactMe from "../ContactMe"
 import './index.scss'
 
@@ -18,9 +17,7 @@ const Footer = () =>
                     </Col>
                     <Col xs={{ span: 12, order: 3 }} md={{ span: 4, order: 3 }} className='px-0 justify-content-center align-items-center d-flex'>
                         <div className='fs-5'>
-                            {`Copyright `}
-                            <BiCopyright />
-                            {` 2023`}
+                            {`www.saunders.wiki | 2024`}
                         </div>
                     </Col>
                 </Row>
