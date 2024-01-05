@@ -23,66 +23,87 @@ const PageResume = () => {
         <div className='resume-container'>
             <Container className='mt-3'>
                 <Row>
-                    <Col xs={12} lg={6} className='mb-5'>
+                    <Col xs={12} lg={6} className='experience-col'>
                         <div>
                             <h1 className='primary-purple'>
                                 Experience
                             </h1>
                             <div className='text-summary'>
-                                <div className='primary-purple fs-4 fw-bold'>
-                                    Asurion
-                                </div>
-                                <div>
-                                    Software Engineer, 1 year
-                                    <ul>
-                                        <li>
-                                            I worked on a small team of engineers that worked to support our company’s main agent portal.
-                                        </li>
-                                        <li>
-                                            Our goal was to optimizer and improve both a user and developer experience in whatever ways we could
-                                        </li>
-                                        <li>
-                                            I led multiple front-end design projects that included designing a new portal for our agents to register
-                                            clients and manage their information as well as implementing a new tool called Contentful into our
-                                            front-end design process for an existing project
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className='mb-4 divider' />
-                                <div className='primary-purple fs-4 fw-bold'>
-                                    Auto Data Direct
-                                </div>
-                                <div>
-                                    Full Stack Software Developer, 3 years
-                                    <ul>
-                                        <li>
-                                            I worked on a small team of developers that would build products for the company to sell to their clients
-                                            and applications for the company to track administration tasks and information.
-                                        </li>
-                                        <li>
-                                            I lead a number of projects such as designing an email service that would send and track all emails sent
-                                            from our projects as well as a reporting system that allowed our admin users to run reports on our
-                                            database
-                                        </li>
-                                        <li>
-                                            I worked on frontend development in React, Js, Node.js and HTML and backend work in Java, C#,
-                                            Postgresql
-                                        </li>
-                                        <li>
-                                            Awarded Rookie of the year and Employee of the Month
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div>
                                     <div className='primary-purple fs-4 fw-bold'>
                                         PROFESSIONAL SUMMARY
                                     </div>
                                     <div>
-                                        Accomplished and energetic Software Developer with a solid history of achievement in developing both
-                                        front-end UI and backend software. A motivated and adaptive leader with strong organizational and
-                                        prioritization abilities. Areas of expertise include Software Development, Project Management, and Information
-                                        Security.
+                                        Seasoned App Development Engineer with a four-year track record across multiple companies, showcasing adaptability and a client-centric approach
+                                        within specialized teams. Proficient in spearheading diverse projects, spanning greenfield developments, system modernizations, and architecture
+                                        migrations. Adept at close collaboration with clients, leveraging extensive technical expertise to deliver tailored, top-tier solutions that consistently
+                                        exceed expectations.
                                     </div>
+                                </div>
+
+                                <div className='mb-4 divider' />
+
+                                <div className='primary-purple fs-4 fw-bold'>
+                                    Mission Cloud Services
+                                </div>
+                                <div>
+                                    Software Engineer | 1 year | Remote (Based in California)
+                                    <ul>
+                                        <li>
+                                            Collaborated as a key member of a dedicated team within Mission, focusing on customized client solutions.
+                                        </li>
+                                        <li>
+                                            Led or contributed to a range of projects, from greenfield developments to modernizing existing systems and transitioning architectures.
+                                        </li>
+                                        <li>
+                                            I worked closely with clients to understand their specific needs and delivered tailored solutions that met and exceeded their expectations. I
+                                            successfully handled a dynamic workload, adjusting to the unique requirements of each project and consistently delivering high-quality results and
+                                            leveraged deep technical knowledge and skills to architect, develop, and implement solutions that optimized client systems and workflows.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className='mb-4 divider' />
+
+                                <div className='primary-purple fs-4 fw-bold'>
+                                    Asurion
+                                </div>
+                                <div>
+                                    Software Engineer | 1 year | Remote (Based in Virginia)
+                                    <ul>
+                                        <li>
+                                            I collaborated within a small team of engineers focused on maintaining and enhancing our company&apos;s primary agent portal.
+                                        </li>
+                                        <li>
+                                            Our main objective was to enhance both user and developer experiences through comprehensive optimizations.
+                                        </li>
+                                        <li>
+                                            I led multiple front-end design projects that included designing a new portal for our agents to register and manage clients as well as
+                                            implementing Contentful into our front-end design process for an existing project
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className='mb-4 divider' />
+
+                                <div className='primary-purple fs-4 fw-bold'>
+                                    Auto Data Direct
+                                </div>
+                                <div>
+                                    Full Stack Software Developer | 2 years | Tallahassee, Fl
+                                    <ul>
+                                        <li>
+                                            I worked on a small team of developers that would build products for the company to sell to their clients and applications for the
+                                            company to track administration tasks and information.
+                                        </li>
+                                        <li>
+                                            I lead a number of projects such as designing an email service that would send and track all emails sent from our projects as well as a
+                                            reporting system that allowed our admin users to run reports on our database
+                                        </li>
+                                        <li>
+                                            Awarded Rookie of the Year and Employee of the Month
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
